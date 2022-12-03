@@ -1,17 +1,14 @@
 import { Contact } from 'components/Contact/Contact';
+import css from 'components/ContactList/ContactList.module.css';
 
 export const ContactList = ({ contacts, filter, onDelete }) => {
   return (
-    <ul>
+    <ul className={css.list}>
       {contacts.map(
         contact =>
           contact.name.toLowerCase().includes(filter.toLowerCase()) && (
-            <li key={contact.id}>
-              <Contact
-                name={contact.name}
-                number={contact.number}
-                onDelete={onDelete}
-              />
+            <li className={css.item} key={contact.id}>
+              <Contact contact={contact} onDelete={onDelete} />
             </li>
           )
       )}

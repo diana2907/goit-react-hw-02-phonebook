@@ -44,7 +44,7 @@ export class App extends Component {
   render() {
     const { contacts, filter } = this.state;
     return (
-      <div>
+      <div className="container">
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.onSubmit} contacts={contacts} />
         <h2>Contacts</h2>

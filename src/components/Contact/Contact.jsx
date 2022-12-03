@@ -1,11 +1,15 @@
-export const Contact = ({ id, name, number, onDelete }) => {
+import css from 'components/Contact/Contact.module.css';
+
+export const Contact = ({ contact: { id, name, number }, onDelete }) => {
   console.log(id);
   return (
     <>
-      <p>
-        {name}: {number}
+      <p className={css.contact}>
+        {name}: <span className={css.span}> {number}</span>
       </p>
-      <button onClick={() => onDelete(id)}>Delete</button>
+      <button className={css.btn} onClick={() => onDelete(id)}>
+        Delete
+      </button>
     </>
   );
 };

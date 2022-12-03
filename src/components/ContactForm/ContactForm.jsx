@@ -1,3 +1,5 @@
+import css from 'components/ContactForm/ContactForm.module.css';
+
 export const ContactForm = ({ onSubmit }) => {
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -7,10 +9,11 @@ export const ContactForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className={css.form} onSubmit={handleSubmit}>
+      <label className={css.label}>
         Name
         <input
+          className={css.input}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -18,9 +21,10 @@ export const ContactForm = ({ onSubmit }) => {
           required
         />
       </label>
-      <label>
+      <label className={css.label}>
         Number
         <input
+          className={css.input}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -28,7 +32,9 @@ export const ContactForm = ({ onSubmit }) => {
           required
         />
       </label>
-      <button type="submit">Add contact</button>
+      <button className={css.btn} type="submit">
+        Add contact
+      </button>
     </form>
   );
 };
